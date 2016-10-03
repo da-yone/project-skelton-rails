@@ -11,3 +11,5 @@ This project uses the below constisution.
 - RSpec
 - Circle CI
 - npm
+- Bootstrap
+- jQuery
