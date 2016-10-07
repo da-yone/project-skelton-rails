@@ -1,0 +1,23 @@
+machine:
+  pre:
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  services:
+    - docker
+  post:
+    - sudo service postgresql stop
+
+dependencies:
+  pre:
+    - pip install docker-compose
+  override:
+    - docker-compose up -d
+
+database:
+  override:
+    - docker-compose run web rails db:create RAILS_ENV=test
+    - docker-compose run web rails db:migrate RAILS_ENV=test
+
+test:
+  override:
+    - bundle install
+    - bundle exec rspec
