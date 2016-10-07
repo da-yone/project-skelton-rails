@@ -9,6 +9,8 @@ services:
       POSTGRES_PASSWORD: password
   web:
     image: dayone80/project-skelton-rails
+    volumes:
+      - .:/usr/src/app
     links:
       - db
     environment:
