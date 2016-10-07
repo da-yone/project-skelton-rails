@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build .
+    - docker-compose up -d
+
+database:
+  override:
+    - docker-compose run web rails db:create RAILS_ENV=test
+    - docker-compose run web rails db:migrate RAILS_ENV=test
+
+test:
+  override:
+    - bundle install
+    - bundle exec rspec
