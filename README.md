@@ -23,9 +23,9 @@ Things you may want to cover:
 
 * ...
 
-// dockerhubに登録するまで必要
-$docker build -t dayone80/project-skelton-rails  
+// dockerhubに登録するまで必要  
 
+$docker build -t dayone80/project-skelton-rails  
 $docker-compose up  
 $docker-compose run rails db:create  
 $docker-compose run rails db:migrate  
