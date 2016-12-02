@@ -4,3 +4,5 @@
 vendor/bundle
 log
 tmp
+
+db/schema.rb
