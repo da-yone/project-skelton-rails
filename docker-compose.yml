@@ -11,6 +11,7 @@ services:
     image: dayone80/project-skelton-rails
     volumes:
       - .:/usr/src/app
+    command: bash -c "rm -f /usr/src/app/tmp/pids/server.pid && rails s -b 0.0.0.0"      
     links:
       - db
     environment:
