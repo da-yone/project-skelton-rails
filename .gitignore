@@ -4,5 +4,6 @@
 vendor/bundle
 log
 tmp
-
 db/schema.rb
+config/newrelic.yml
+Gemfile.lock
