@@ -1,9 +1,10 @@
-FROM ruby:2.4.0
+FROM ruby:2.3.3
 
-ENV PACKAGES="git nodejs postgresql"
+ENV PACKAGES="git nodejs npm postgresql"
 ENV APP_ROOT="/app"
 
-RUN apt-get update && \
+RUN add-apt-repository ppa:chris-lea/node.js && \
+    apt-get update && \
     apt-get install -y $PACKAGES && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir /app
@@ -11,5 +12,7 @@ RUN apt-get update && \
 WORKDIR $APP_ROOT
 COPY Gemfile $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
+COPY package.json $APP_ROOT
 RUN bundle install
 COPY . $APP_ROOT
+RUN npm install

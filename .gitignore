@@ -2,8 +2,12 @@
 .DS_Store
 
 vendor/bundle
+node_modules
 log
 tmp
 db/schema.rb
 config/newrelic.yml
 Gemfile.lock
+# Added by webpack-rails
+/node_modules
+/public/webpack
