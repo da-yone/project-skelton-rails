@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:2.4.0
 
 ENV PACKAGES="git nodejs postgresql"
 ENV APP_ROOT="/app"
