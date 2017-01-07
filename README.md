@@ -1,6 +1,8 @@
 # README
 
+$docker-compose up -d
+$docker-compose run web rails db:create  
+$docker-compose run web rails db:migrate  
+$docker attach web
 
-$docker-compose up  
-$docker-compose run rails db:create  
-$docker-compose run rails db:migrate  
+$docker-compose stop
